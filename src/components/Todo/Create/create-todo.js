@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
 
-import axios from 'axios'
-import apiUrl from '../../../apiConfig'
+import { todoCreate } from '../../../api/todos'
 
 import TodoForm from '../../Shared/TodoForm'
 
@@ -39,32 +38,34 @@ class Create extends Component {
   }
   onSubmit= async (event) => {
     event.preventDefault()
-    /* API call */
-    try {
-      const res = await axios({
-        url: `${apiUrl}/todos`,
-        method: 'POST',
-        data: {
-          project: this.state.project,
-          description: this.state.description,
-          responsible: this.state.responsible,
-          comments: this.state.comments,
-          priority: this.state.priority,
-          duedate: this.state.duedate,
-          completed: this.state.completed
-        }
+
+    const { user, msgAlert } = this.props
+
+    todoCreate(this.state.todo, user)
+      .then(res => {
+        this.setState({ createdId: res.data.todo._id })
       })
-      this.setState({ createdId: res.data.book._id })
-    } catch (err) {
-      console.error(err)
-    }
+      .then(() => {
+        msgAlert({
+          heading: 'Create Todo Success',
+          variant: 'success',
+          message: 'Todo Is Now Displayed. Look at the page.'
+        })
+      })
+      .catch(err => {
+        msgAlert({
+          heading: 'Create Todo Failed',
+          variant: 'danger',
+          message: 'Todo is not displayed due to error: ' + err.message
+        })
+      })
   }
 
   render () {
     const { todo, createdId } = this.state
     let todoJsx
     if (createdId) {
-      todoJsx = <Redirect to={`/todo/${createdId}`}/>
+      todoJsx = <Redirect to={`/todos/${createdId}`}/>
     } else {
       todoJsx = (
         <TodoForm
