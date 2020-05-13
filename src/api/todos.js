@@ -12,7 +12,6 @@ export const todoShow = (id, user) => {
 }
 
 export const todoIndex = (user) => {
-  console.log('in api')
   return axios({
     url: apiUrl + '/todos',
     method: 'GET',

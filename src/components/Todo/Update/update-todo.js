@@ -20,7 +20,6 @@ class TodoUpdate extends Component {
     todoShow(match.params.id, user)
       .then(res => {
         this.setState({ todo: res.data.todo })
-        console.log(res.data.todo)
       })
       .then(() => {
         msgAlert({
@@ -73,11 +72,11 @@ class TodoUpdate extends Component {
     if (!todo) {
       todoJsx = 'Loading...in update'
     } else if (updated) {
-      todoJsx = <Redirect to={`/todos/${this.props.match.params.id}`}/>
+      todoJsx = <Redirect to={'/todos'}/>
     } else {
       todoJsx = (
         <div>
-          <h3>Movie Update Page</h3>
+          <h3>Update Task</h3>
           <TodoForm
             todo={todo}
             handleChange={this.handleChange}

@@ -46,11 +46,18 @@ class TodoCreate extends Component {
         this.setState({ createdId: res.data.todo._id })
       })
       .then(() => {
+        this.setState({ project: '',
+          description: '',
+          responsible: '',
+          comments: '',
+          priority: '',
+          duedate: '' })
         msgAlert({
           heading: 'Create Todo Success',
           variant: 'success',
           message: 'Todo Is Now Displayed. Look at the page.'
         })
+        this.props.history.push('/todos')
       })
       .catch(err => {
         msgAlert({
@@ -68,11 +75,14 @@ class TodoCreate extends Component {
       todoJsx = <Redirect to={`/todos/${createdId}`}/>
     } else {
       todoJsx = (
-        <TodoForm
-          todo={todo}
-          handleSubmit={this.onSubmit}
-          handleChange= {this.handleChange}
-        />
+        <div>
+          <h3>Create Task</h3>
+          <TodoForm
+            todo={todo}
+            handleSubmit={this.onSubmit}
+            handleChange= {this.handleChange}
+          />
+        </div>
       )
     }
     return (

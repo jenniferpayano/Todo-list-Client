@@ -2,7 +2,6 @@ import React from 'react'
 
 const TodoForm = ({ todo, handleSubmit, handleChange }) => (
   <div style={{ marginTop: 10 }}>
-    <h3> Create New Todo </h3>
     <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label>Project: </label>
@@ -95,7 +94,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
           <input
             type="submit"
             className="btn btn-primary"
-            value="Create Todo"
+            value="Submit"
           />
         </div>
       </div>

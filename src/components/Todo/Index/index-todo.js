@@ -49,7 +49,6 @@ class TodoIndex extends Component {
       })
   }
   todoList () {
-    console.log(this.state.todos)
     return this.state.todos.map(function (currentTodo, i) {
       return <Todo todo={currentTodo} key= {i} />
     })
