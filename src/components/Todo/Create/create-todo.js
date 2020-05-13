@@ -46,19 +46,11 @@ class TodoCreate extends Component {
         this.setState({ createdId: res.data.todo._id })
       })
       .then(() => {
-        this.setState({ project: '',
-          description: '',
-          responsible: '',
-          comments: '',
-          priority: '',
-          duedate: '',
-          completed: '' })
         msgAlert({
           heading: 'Create Todo Success',
           variant: 'success',
           message: 'Todo Is Now Displayed. Look at the page.'
         })
-        this.props.history.push('/todos')
       })
       .catch(err => {
         msgAlert({
@@ -73,7 +65,7 @@ class TodoCreate extends Component {
     const { todo, createdId } = this.state
     let todoJsx
     if (createdId) {
-      todoJsx = <Redirect to={`/todos/${createdId}`}/>
+      todoJsx = <Redirect to={'/todos'}/>
     } else {
       todoJsx = (
         <div>

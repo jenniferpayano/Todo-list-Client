@@ -25,14 +25,14 @@ class TodoIndex extends Component {
         msgAlert({
           heading: 'Index Todo Success',
           variant: 'success',
-          message: 'Movies Are Now Displayed. Look at the page.'
+          message: 'Task Are Now Displayed. Look at the page.'
         })
       })
       .catch(err => {
         msgAlert({
           heading: 'Index Todo Failed',
           variant: 'danger',
-          message: 'Movies are not displayed due to error: ' + err.message
+          message: 'Task are not displayed due to error: ' + err.message
         })
       })
   }
@@ -42,7 +42,6 @@ class TodoIndex extends Component {
     })
   }
   handleDelete = id => {
-    console.log('in handle delete')
     const { user, msgAlert } = this.props
     todoDelete(id, user)
       .then(() => {
@@ -52,6 +51,7 @@ class TodoIndex extends Component {
           message: 'Nice work you did it'
         })
       })
+
       .then(() => this.setState({ deleted: true }))
       .catch((err) => {
         msgAlert({
@@ -62,8 +62,6 @@ class TodoIndex extends Component {
       })
   }
   onClickDelete = (props) => {
-    console.log(props)
-    console.log(this)
     // const { msgAlert } = this.props
     confirmAlert({
       title: 'Confirm to Delete',
