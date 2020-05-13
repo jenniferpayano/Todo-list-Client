@@ -62,7 +62,9 @@ class TodoUpdate extends Component {
   }
 
   handleChange = event => {
-    this.setState({ todo: { ...this.state.todo, [event.target.name]: event.target.value } })
+    this.setState({ todo: { ...this.state.todo,
+      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value } })
   }
 
   render () {
