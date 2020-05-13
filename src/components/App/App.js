@@ -10,7 +10,6 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 import TodoCreate from '../Todo/Create/create-todo'
-import TodoDelete from '../Todo/Delete/delete-todo'
 import TodoIndex from '../Todo/Index/index-todo'
 import TodoUpdate from '../Todo/Update/update-todo'
 
@@ -70,10 +69,6 @@ class App extends Component {
           {/* Todo Update Route: */}
           <AuthenticatedRoute exact path="/todos/:id" user={this.state.user} render={({ match }) => (
             <TodoUpdate msgAlert={this.msgAlert} user={this.state.user} match={match}/>
-          )}/>
-          {/* Todo Delete Route */}
-          <AuthenticatedRoute exact path="/todos/:id" user={this.state.user} render={({ match }) => (
-            <TodoDelete msgAlert={this.msgAlert} user={this.state.user} match={match}/>
           )}/>
 
         </main>

@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { FaPencilAlt, FaTrash } from 'react-icons/fa'
-import { todoIndex } from '../../../api/todos'
+import { todoIndex, todoDelete } from '../../../api/todos'
 import { confirmAlert } from 'react-confirm-alert'
 import { Button } from 'react-bootstrap'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 
-const OnClickBottom = (e) => {
+const OnClickDelete = (event) => {
+  console.log(event.target.id)
+  // const { msgAlert } = this.props
   confirmAlert({
     title: 'Confirm to Delete',
     message: 'Are you sure to do this.',
     buttons: [
       {
         label: 'Yes',
-        onClick: () => alert('Click Yes')
+        onClick: (this.handleDelete)
       },
       {
-        label: 'No',
-        onClick: () => alert('Click No')
+        label: 'No'
+        // onClick: () => alert('Click No')
       }
     ]
   })
@@ -35,7 +37,7 @@ const Todo = props => (
         <FaPencilAlt/>
       </Link>
       &emsp;&ensp;
-      <Button onClick={OnClickBottom} id={props.todo._id}>
+      <Button onClick={OnClickDelete} id={props.todo._id}>
         <FaTrash/>
       </Button>
 
@@ -48,8 +50,7 @@ class TodoIndex extends Component {
     super()
 
     this.state = {
-      todos: null,
-      show: false
+      todos: null
     }
   }
 
@@ -79,6 +80,26 @@ class TodoIndex extends Component {
       return <Todo todo={currentTodo} key= {i} />
     })
   }
+  handleDelete = event => {
+    const { user, msgAlert, match } = this.props
+    todoDelete(match.params.id, user)
+      .then(() => {
+        msgAlert({
+          heading: 'Movie Delete Success!',
+          variant: 'success',
+          message: 'Nice work you did it'
+        })
+      })
+      .then(() => this.setState({ deleted: true }))
+      .catch((err) => {
+        msgAlert({
+          heading: 'Movie Delete Failed',
+          variant: 'danger',
+          message: 'Failed with error: ' + err.message
+        })
+      })
+  }
+
   render () {
     const { todos } = this.state
 
