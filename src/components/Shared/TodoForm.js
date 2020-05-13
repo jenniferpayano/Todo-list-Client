@@ -1,5 +1,4 @@
 import React from 'react'
-
 const TodoForm = ({ todo, handleSubmit, handleChange }) => (
   <div style={{ marginTop: 10 }}>
     <form onSubmit={handleSubmit}>

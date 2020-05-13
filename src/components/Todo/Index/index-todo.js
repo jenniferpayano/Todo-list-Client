@@ -1,7 +1,27 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
+import { FaPencilAlt, FaTrash } from 'react-icons/fa'
 import { todoIndex } from '../../../api/todos'
+import { confirmAlert } from 'react-confirm-alert'
+import { Button } from 'react-bootstrap'
+import 'react-confirm-alert/src/react-confirm-alert.css'
+
+const OnClickBottom = (e) => {
+  confirmAlert({
+    title: 'Confirm to Delete',
+    message: 'Are you sure to do this.',
+    buttons: [
+      {
+        label: 'Yes',
+        onClick: () => alert('Click Yes')
+      },
+      {
+        label: 'No',
+        onClick: () => alert('Click No')
+      }
+    ]
+  })
+}
 
 const Todo = props => (
   <tr>
@@ -12,8 +32,13 @@ const Todo = props => (
     <td className= {props.todo.completed ? 'completed' : '' }> {props.todo.completed.toString()}</td>
     <td>
       <Link to={`/todos/${props.todo._id}`} key={props.todo._id}>
-          Edit
+        <FaPencilAlt/>
       </Link>
+      &emsp;&ensp;
+      <Button onClick={OnClickBottom} id={props.todo._id}>
+        <FaTrash/>
+      </Button>
+
     </td>
   </tr>
 )
@@ -23,7 +48,8 @@ class TodoIndex extends Component {
     super()
 
     this.state = {
-      todos: null
+      todos: null,
+      show: false
     }
   }
 
@@ -63,7 +89,7 @@ class TodoIndex extends Component {
     } else {
       todoJsx = (
         <div>
-          <h3>Task List Page</h3>
+          <h3>Task Tracker</h3>
           <table className="table table-striped" style= {{ marginTop: 20 }}>
             <thead>
               <tr>
