@@ -8,9 +8,11 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
-import Create from '../Todo/Create/create-todo'
-import TodoShow from '../Todo/Show/show-todo'
+
+import TodoCreate from '../Todo/Create/create-todo'
+// import TodoShow from '../Todo/Show/show-todo'
 import TodoIndex from '../Todo/Index/index-todo'
+import TodoUpdate from '../Todo/Update/update-todo'
 class App extends Component {
   constructor () {
     super()
@@ -58,15 +60,15 @@ class App extends Component {
           )} />
           {/* TODO CREATE  */}
           <AuthenticatedRoute user={user} path='/create' render={() => (
-            <Create msgAlert={this.msgAlert} user={user} />
-          )} />
-          {/* TODO SHOW  */}
-          <AuthenticatedRoute user={user} path='/todos/:id' render={({ match }) => (
-            <TodoShow msgAlert={this.msgAlert} user={user} match={match} />
+            <TodoCreate msgAlert={this.msgAlert} user={user} />
           )} />
           {/* TODO Index Route: */}
           <AuthenticatedRoute exact path="/todos" user={this.state.user} render={() => (
             <TodoIndex msgAlert={this.msgAlert} user={this.state.user} />
+          )}/>
+          {/* Todo Update Route: */}
+          <AuthenticatedRoute exact path="/todos/:id" user={this.state.user} render={({ match }) => (
+            <TodoUpdate msgAlert={this.msgAlert} user={this.state.user} match={match}/>
           )}/>
 
         </main>

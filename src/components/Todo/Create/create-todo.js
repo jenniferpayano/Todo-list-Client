@@ -5,7 +5,7 @@ import { todoCreate } from '../../../api/todos'
 
 import TodoForm from '../../Shared/TodoForm'
 
-class Create extends Component {
+class TodoCreate extends Component {
   constructor () {
     super()
 
@@ -83,4 +83,4 @@ class Create extends Component {
   }
 }
 
-export default withRouter(Create)
+export default withRouter(TodoCreate)

@@ -60,7 +60,7 @@ class TodoShow extends Component {
     let todoJsx
 
     if (!todo) {
-      todoJsx = 'Loading...'
+      todoJsx = 'Loading...in show'
     } else if (deleted) {
       todoJsx = <Redirect to="/todos"/>
     } else {

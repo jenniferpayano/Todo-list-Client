@@ -60,7 +60,6 @@ class TodoIndex extends Component {
     let todoJsx
 
     if (!todos) {
-      console.log('todosss ' + todos)
       todoJsx = 'Loading...'
     } else {
       todoJsx = (
