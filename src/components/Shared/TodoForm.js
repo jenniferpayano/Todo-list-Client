@@ -90,6 +90,18 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
             onChange={handleChange}
           />
         </div>
+        <div className="form-check form-check-inline">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            name="completed"
+            id="completed"
+            value= {todo.completed}
+            checked={todo.completed}
+            onChange={handleChange}
+          />
+          <label className="form-check-label">Completed</label>
+        </div>
         <div className="form-group">
           <input
             type="submit"

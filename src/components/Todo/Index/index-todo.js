@@ -5,11 +5,11 @@ import { todoIndex } from '../../../api/todos'
 
 const Todo = props => (
   <tr>
-    <td> {props.todo.project} </td>
-    <td> {props.todo.responsible}</td>
-    <td> {props.todo.priority} </td>
-    <td> {props.todo.duedate} </td>
-    <td> {props.todo.completed.toString()}</td>
+    <td className= {props.todo.completed ? 'completed' : '' }> {props.todo.project} </td>
+    <td className= {props.todo.completed ? 'completed' : '' }> {props.todo.responsible}</td>
+    <td className= {props.todo.completed ? 'completed' : '' }> {props.todo.priority} </td>
+    <td className= {props.todo.completed ? 'completed' : '' }> {props.todo.duedate} </td>
+    <td className= {props.todo.completed ? 'completed' : '' }> {props.todo.completed.toString()}</td>
     <td>
       <Link to={`/todos/${props.todo._id}`} key={props.todo._id}>
           Edit

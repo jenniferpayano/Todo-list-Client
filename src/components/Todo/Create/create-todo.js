@@ -25,14 +25,14 @@ class TodoCreate extends Component {
   handleChange = (event) => {
     // create an object with the key/value of the field I'm typing in
     const updatedField = {
-      [event.target.name]: event.target.value
-    }
+      [event.target.name]: event.target.value,
 
+      [event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value
+    }
     // merge state and updatedField
     // merge updatedField INTO this.state.book
     // assign updatedField TO this.state.book
     const editedTodo = Object.assign(this.state.todo, updatedField)
-
     // set the state
     this.setState({ todo: editedTodo })
   }
@@ -51,7 +51,8 @@ class TodoCreate extends Component {
           responsible: '',
           comments: '',
           priority: '',
-          duedate: '' })
+          duedate: '',
+          completed: '' })
         msgAlert({
           heading: 'Create Todo Success',
           variant: 'success',
