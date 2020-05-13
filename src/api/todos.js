@@ -12,6 +12,7 @@ export const todoShow = (id, user) => {
 }
 
 export const todoIndex = (user) => {
+  console.log('in api')
   return axios({
     url: apiUrl + '/todos',
     method: 'GET',
@@ -31,24 +32,24 @@ export const todoDelete = (id, user) => {
   })
 }
 
-export const todoUpdate = (id, movie, user) => {
+export const todoUpdate = (id, todo, user) => {
   return axios({
     url: apiUrl + '/todos/' + id,
     method: 'PATCH',
     headers: {
       'Authorization': `Token token=${user.token}`
     },
-    data: { movie }
+    data: { todo }
   })
 }
 
-export const todoCreate = (movie, user) => {
+export const todoCreate = (todo, user) => {
   return axios({
     url: apiUrl + '/todos',
     method: 'POST',
     headers: {
       'Authorization': `Token token=${user.token}`
     },
-    data: { movie }
+    data: { todo }
   })
 }
