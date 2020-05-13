@@ -10,9 +10,9 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 import TodoCreate from '../Todo/Create/create-todo'
-// import TodoShow from '../Todo/Show/show-todo'
 import TodoIndex from '../Todo/Index/index-todo'
 import TodoUpdate from '../Todo/Update/update-todo'
+
 class App extends Component {
   constructor () {
     super()
