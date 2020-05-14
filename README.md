@@ -17,7 +17,7 @@ This is a task tracking application user interface written in React by me [Jenni
 I wanted to create this application to keep track of things that need to get done for a project.
 The goal of the application is to write who is responsible for the task, when it is completed, and when it is due.
 
-The deployed user interface application url: http://jenniferpayano.com/Todo-list-Client/
+The deployed user interface application url: https://jenniferpayano.com/Todo-list-Client/
 
 This site API is deployed to: https://task-list-ga.herokuapp.com/
 
