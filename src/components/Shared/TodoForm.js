@@ -5,6 +5,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
       <div className="form-group">
         <label>Project: </label>
         <input
+          required="required"
           type="text"
           className="form-control"
           name="project"
@@ -15,6 +16,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
       <div className="form-group">
         <label>Description: </label>
         <input
+          required="required"
           type="text"
           className="form-control"
           name="description"
@@ -25,6 +27,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
       <div className="form-group">
         <label>Responsible: </label>
         <input
+          required="required"
           type="text"
           className="form-control"
           name="responsible"
@@ -45,12 +48,13 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
       <div className="form-group">
         <div className="form-check form-check-inline">
           <input
+
             className="form-check-input"
             type="radio"
             name="priority"
             id="priorityLow"
             value="Low"
-            checked={todo.priority === 'Low' || ''}
+            checked={todo.priority === 'Low' || 'checked'}
             onChange={handleChange}
           />
           <label className="form-check-label">Low</label>

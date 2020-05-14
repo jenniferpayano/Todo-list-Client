@@ -56,7 +56,7 @@ class TodoCreate extends Component {
         msgAlert({
           heading: 'Create Todo Failed',
           variant: 'danger',
-          message: 'Todo is not displayed due to error: ' + err.message
+          message: 'T is not displayed due to error: ' + err.message
         })
       })
   }
