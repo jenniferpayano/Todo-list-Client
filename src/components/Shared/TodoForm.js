@@ -53,7 +53,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
             name="priority"
             id="priorityLow"
             value="Low"
-            checked={todo.priority === 'Low' || 'checked'}
+            checked={todo.priority === 'Low' || ''}
             onChange={handleChange}
           />
           <label className="form-check-label">Low</label>
