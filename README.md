@@ -42,7 +42,7 @@ USER STORIES
 - As a user I want the created a task to display on my table
 - As a user I want to update the task and its values
 - As a user once the task is completed I want to mark it as completed
-- As a user I want to delete the task that belong to ME if any mistakes have been made.
+- As a user I want to delete the tasks that belong to ME if any mistakes have been made.
 - As a user I want to sign out of my application when Im done with my task.
 
 ERD
