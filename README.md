@@ -1,1 +1,1 @@
-[![Jennifer Payano Logo](https://imgur.com/a/3b9nTDT)](https://jenniferpayano.com)
+[![Jennifer Payano Logo](https://imgur.com/A6F7cRJ)](https://jenniferpayano.com)
