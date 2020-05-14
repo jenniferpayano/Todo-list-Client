@@ -48,7 +48,6 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
       <div className="form-group">
         <div className="form-check form-check-inline">
           <input
-
             className="form-check-input"
             type="radio"
             name="priority"
@@ -86,6 +85,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
         <div className="form-group">
           <label>Due Date: </label>
           <input
+            required="required"
             type="date"
             className="form-control"
             name="duedate"

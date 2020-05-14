@@ -15,7 +15,7 @@ class TodoCreate extends Component {
         description: '',
         responsible: '',
         comments: '',
-        priority: '',
+        priority: 'Low',
         duedate: '',
         completed: false
       },
