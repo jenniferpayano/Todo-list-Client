@@ -82,7 +82,7 @@ IMAGES
 ------
 ![screenshot](https://i.imgur.com/ClP6FL9.png)
 ![screenshot](https://i.imgur.com/H927tuy.png)
-![screenshot](https://imgur.com/3d9b82a5-d987-4788-ab5e-b30f033e60ad)
+![screenshot](https://i.imgur.com/9m8tLah.png)
 ![screenshot](https://i.imgur.com/nBe5CvI.png)
 ![screenshot](https://i.imgur.com/c0uurwi.png)
 
