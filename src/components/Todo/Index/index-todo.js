@@ -69,7 +69,7 @@ class TodoIndex extends Component {
       buttons: [
         {
           label: 'Yes',
-          onClick: this.handleDelete(props)
+          onClick: () => this.handleDelete(props)
         },
         {
           label: 'No'
