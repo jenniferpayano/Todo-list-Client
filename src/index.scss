@@ -1,5 +1,25 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  font-family: 'Pangolin', cursive;
+  background-image: url('')
+}
+
+
+Form {
+  width: 50vh;
+  position: fixed;
+  left: 40%;
+}
 .completed {
   text-decoration: line-through;
+}
+
+.background {
+  background: url('https://images.unsplash.com/photo-1573994824701-f3c848695ab0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
+}
+
+.loading {
+  position: fixed;
+  left: 40%;
 }
