@@ -9,6 +9,8 @@ Task Assigner
 * ERD
 * Technology
 * Unsolved Problems
+* Set up and Installation
+* Images
 * Creator
 
 Description
@@ -49,6 +51,17 @@ ERD
 -----------------
 https://imgur.com/a/Sysq1no
 
+Catalog of Routes
+------------------
+
+Verb         |	URI Pattern
+------------ | -------------
+GET | /todos
+GET | /todos/:id
+POST | /todos
+PATCH | /todos/:id
+DELETE | /todos/:id
+
 TECHNOLOGY
 ------------
 - React
@@ -57,6 +70,22 @@ TECHNOLOGY
 UNSOLVED PROBLEMS
 -----------------
 - Table is not searchable yet, pending...Material UI table
+
+Set Up and Installation
+-----------------------
+- Download this template.
+- Unzip and rename the template directory (unzip ~/Downloads/todo-list-Client.zip).
+- Install dependencies with `npm install`.
+- Run the development server with `npm start`.
+
+IMAGES
+------
+![screenshot](https://i.imgur.com/ClP6FL9.png)
+![screenshot](https://i.imgur.com/H927tuy.png)
+![screenshot](https://imgur.com/3d9b82a5-d987-4788-ab5e-b30f033e60ad)
+![screenshot](https://i.imgur.com/nBe5CvI.png)
+![screenshot](https://i.imgur.com/c0uurwi.png)
+
 
 CREATOR
 ---------
