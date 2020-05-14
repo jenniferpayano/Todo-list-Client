@@ -49,14 +49,14 @@ class TodoCreate extends Component {
         msgAlert({
           heading: 'Create Todo Success',
           variant: 'success',
-          message: 'Todo Is Now Displayed. Look at the page.'
+          message: 'Tasks are now displayed. Look at the page.'
         })
       })
       .catch(err => {
         msgAlert({
           heading: 'Create Todo Failed',
           variant: 'danger',
-          message: 'T is not displayed due to error: ' + err.message
+          message: 'Tasks are not displayed due to error: ' + err.message
         })
       })
   }

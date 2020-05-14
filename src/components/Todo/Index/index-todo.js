@@ -24,14 +24,14 @@ class TodoIndex extends Component {
         msgAlert({
           heading: 'Index Todo Success',
           variant: 'success',
-          message: 'Task Are Now Displayed. Look at the page.'
+          message: 'Tasks are now displayed. Look at the page.'
         })
       })
       .catch(err => {
         msgAlert({
           heading: 'Index Todo Failed',
           variant: 'danger',
-          message: 'Task are not displayed due to error: ' + err.message
+          message: 'Tasks are not displayed due to error: ' + err.message
         })
       })
   }
@@ -45,7 +45,7 @@ class TodoIndex extends Component {
     todoDelete(id, user)
       .then(() => {
         msgAlert({
-          heading: 'Task Delete Success!',
+          heading: 'Task was deleted Successful!',
           variant: 'success',
           message: 'Nice work you did it'
         })
@@ -54,7 +54,7 @@ class TodoIndex extends Component {
       .then(() => this.setState({ deleted: true }))
       .catch((err) => {
         msgAlert({
-          heading: 'Task Delete Failed',
+          heading: 'Task failed to delete',
           variant: 'danger',
           message: 'Failed with error: ' + err.message
         })
