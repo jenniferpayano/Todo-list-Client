@@ -77,6 +77,7 @@ class TodoIndex extends Component {
       ]
     })
   }
+  // delete that specific row
   deleteRow = (i) => {
     const rows = [...this.state.todos]
     rows.splice(i, 1)
@@ -90,7 +91,7 @@ class TodoIndex extends Component {
     let todoJsx
 
     if (!todos) {
-      todoJsx = 'Loading...'
+      todoJsx = <img className="loading" src="https://media.giphy.com/media/YMM6g7x45coCKdrDoj/giphy.gif" alt="loading"/>
     } else {
       todoJsx = (
         <div>
@@ -117,7 +118,9 @@ class TodoIndex extends Component {
     }
 
     return (
-      todoJsx
+      <div className="container">
+        {todoJsx}
+      </div>
     )
   }
 }
@@ -137,7 +140,6 @@ const Todo = props => (
       <Button onClick={() => props.onDelete(props.todo._id, props.id)} id={props.id}>
         <FaTrash/>
       </Button>
-
     </td>
   </tr>
 )
