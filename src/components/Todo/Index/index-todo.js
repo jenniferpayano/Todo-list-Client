@@ -5,7 +5,6 @@ import { todoIndex, todoDelete } from '../../../api/todos'
 import { confirmAlert } from 'react-confirm-alert'
 import { Button } from 'react-bootstrap'
 import 'react-confirm-alert/src/react-confirm-alert.css'
-
 class TodoIndex extends Component {
   constructor () {
     super()
@@ -38,10 +37,10 @@ class TodoIndex extends Component {
   }
   todoList () {
     return this.state.todos.map((currentTodo, i) => {
-      return <Todo todo={currentTodo} key= {i} onDelete={this.onClickDelete}/>
+      return <Todo todo={currentTodo} key= {i} onDelete={this.onClickDelete} id={i}/>
     })
   }
-  handleDelete = id => {
+  handleDelete = (id, row) => {
     const { user, msgAlert } = this.props
     todoDelete(id, user)
       .then(() => {
@@ -51,7 +50,7 @@ class TodoIndex extends Component {
           message: 'Nice work you did it'
         })
       })
-
+      .then(this.deleteRow(row, user))
       .then(() => this.setState({ deleted: true }))
       .catch((err) => {
         msgAlert({
@@ -61,7 +60,7 @@ class TodoIndex extends Component {
         })
       })
   }
-  onClickDelete = (props) => {
+  onClickDelete = (props, i) => {
     // const { msgAlert } = this.props
     confirmAlert({
       title: 'Confirm to Delete',
@@ -69,13 +68,20 @@ class TodoIndex extends Component {
       buttons: [
         {
           label: 'Yes',
-          onClick: () => this.handleDelete(props)
+          onClick: () => this.handleDelete(props, i)
         },
         {
           label: 'No'
           // onClick: () => alert('Click No')
         }
       ]
+    })
+  }
+  deleteRow = (i) => {
+    const rows = [...this.state.todos]
+    rows.splice(i, 1)
+    this.setState({
+      todos: rows
     })
   }
   render () {
@@ -128,7 +134,7 @@ const Todo = props => (
         <FaPencilAlt/>
       </Link>
       &emsp;&ensp;
-      <Button onClick={() => props.onDelete(props.todo._id)} id={props.todo._id}>
+      <Button onClick={() => props.onDelete(props.todo._id, props.id)} id={props.id}>
         <FaTrash/>
       </Button>
 
