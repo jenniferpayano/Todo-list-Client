@@ -24,29 +24,26 @@ This site API is deployed to: https://task-list-ga.herokuapp.com/
 
 WIREFRAME
 ---------
-https://imgur.com/a/eOdfBO1
-https://imgur.com/a/wMVL8f2
+- https://imgur.com/a/eOdfBO1
+- https://imgur.com/a/wMVL8f2
 
 PLANNING AND DEVELOPMENT
 ------------------------
-To plan this game, I knew that I would want to built an application that will help me keep track of grocery items.
-When going into a store I usually loose track of what I want to get when I go into a store. Often
-that shopping list includes many items at different stores. It would be nice to have a tracker
-for the store and what I need to get at that store specifically to keep in budget. I think a lot of busy people get distracted by other things when going to a store and go above their budget.
+To plan this appliction, I knew that I would want to built an application that will help me keep track of task I need to completed for each project. This is a simulation of Jira technology to keep track of user stories. Development included a table in React that meets all the CRUD requirements, in addition once the task is completed the table will show the task crossed accross as a symbol that is completed.
 
 USER STORIES
 ------------
-As a user I want to sign up into my application
-As a user I want to sign in into my application
-As a user I want to change my password when logged in
-As a user I want to create a task with a project name, description, who is
+- As a user I want to sign up into my application
+- As a user I want to sign in into my application
+- As a user I want to change my password when logged in
+- As a user I want to create a task with a project name, description, who is
   responsible, the priority, add comments, mark the due date, and wether it has
   been completed.
-As a user I want the created a task to display on my table
-As a user I want to update the task and its values
-As a user once the task is completed I want to mark it as completed
-As a user I want to delete the task that belong to ME if any mistakes have been made.
-As a user I want to sign out of my application when Im done with my task.
+- As a user I want the created a task to display on my table
+- As a user I want to update the task and its values
+- As a user once the task is completed I want to mark it as completed
+- As a user I want to delete the task that belong to ME if any mistakes have been made.
+- As a user I want to sign out of my application when Im done with my task.
 
 ERD
 -----------------
@@ -59,7 +56,8 @@ TECHNOLOGY
 
 UNSOLVED PROBLEMS
 -----------------
-- Table is not searchable yet, pending...
+- Table is not searchable yet, pending...Material UI table
+
 CREATOR
 ---------
 Jennifer Payano [www.linkedin.com/in/jenniferpayano]
