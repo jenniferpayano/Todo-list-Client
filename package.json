@@ -1,6 +1,6 @@
 {
   "name": "todo-list-Client",
-  "homepage": "https://jenniferpayano.com/Todo-list-Client",
+  "homepage": "https://jenniferpayano.github.io/Todo-list-Client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,6 +25,7 @@
     "react-modal": "^3.11.2",
     "react-router-dom": "^4.3.1",
     "resolve": "1.6.0",
+    "styled-components": "^5.1.0",
     "url-loader": "0.6.2"
   },
   "scripts": {
