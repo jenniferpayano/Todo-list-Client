@@ -5,6 +5,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
       <div className="form-group">
         <label>Project: </label>
         <input
+          required="required"
           type="text"
           className="form-control"
           name="project"
@@ -15,6 +16,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
       <div className="form-group">
         <label>Description: </label>
         <input
+          required="required"
           type="text"
           className="form-control"
           name="description"
@@ -25,6 +27,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
       <div className="form-group">
         <label>Responsible: </label>
         <input
+          required="required"
           type="text"
           className="form-control"
           name="responsible"
@@ -82,6 +85,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
         <div className="form-group">
           <label>Due Date: </label>
           <input
+            required="required"
             type="date"
             className="form-control"
             name="duedate"

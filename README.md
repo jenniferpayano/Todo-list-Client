@@ -7,8 +7,11 @@ Task Assigner
 * Planning and Development
 * User Stories
 * ERD
+* Catalog of Routes
 * Technology
 * Unsolved Problems
+* Set up and Installation
+* Images
 * Creator
 
 Description
@@ -17,7 +20,7 @@ This is a task tracking application user interface written in React by me [Jenni
 I wanted to create this application to keep track of things that need to get done for a project.
 The goal of the application is to write who is responsible for the task, when it is completed, and when it is due.
 
-The deployed user interface application url: http://jenniferpayano.com/Todo-list-Client/
+The deployed user interface application url: https://jenniferpayano.com/Todo-list-Client/
 
 This site API is deployed to: https://task-list-ga.herokuapp.com/
 
@@ -49,6 +52,17 @@ ERD
 -----------------
 https://imgur.com/a/Sysq1no
 
+Catalog of Routes
+------------------
+
+Verb         |	URI Pattern
+------------ | -------------
+GET | /todos
+GET | /todos/:id
+POST | /todos
+PATCH | /todos/:id
+DELETE | /todos/:id
+
 TECHNOLOGY
 ------------
 - React
@@ -57,6 +71,22 @@ TECHNOLOGY
 UNSOLVED PROBLEMS
 -----------------
 - Table is not searchable yet, pending...Material UI table
+
+Set Up and Installation
+-----------------------
+- Download this template.
+- Unzip and rename the template directory (unzip ~/Downloads/todo-list-Client.zip).
+- Install dependencies with `npm install`.
+- Run the development server with `npm start`.
+
+IMAGES
+------
+![screenshot](https://i.imgur.com/ClP6FL9.png)
+![screenshot](https://i.imgur.com/H927tuy.png)
+![screenshot](https://i.imgur.com/9m8tLah.png)
+![screenshot](https://i.imgur.com/nBe5CvI.png)
+![screenshot](https://i.imgur.com/c0uurwi.png)
+
 
 CREATOR
 ---------

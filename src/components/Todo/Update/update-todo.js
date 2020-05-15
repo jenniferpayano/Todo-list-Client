@@ -25,14 +25,14 @@ class TodoUpdate extends Component {
         msgAlert({
           heading: 'Show Todo Success',
           variant: 'success',
-          message: 'Todo Is Now Displayed. Look at the page.'
+          message: 'Tasks are now displayed. Look at the page.'
         })
       })
       .catch(err => {
         msgAlert({
           heading: 'Show todo Failed',
           variant: 'danger',
-          message: 'Todo is not displayed due to error: ' + err.message
+          message: 'Tasks are not displayed due to error: ' + err.message
         })
       })
   }
@@ -49,14 +49,14 @@ class TodoUpdate extends Component {
         msgAlert({
           heading: 'Update Todo Success',
           variant: 'success',
-          message: 'Todo Is Now Updated. Look at the page.'
+          message: 'Task has been updated. Look at the page.'
         })
       })
       .catch(err => {
         msgAlert({
           heading: 'Update Todo Failed',
           variant: 'danger',
-          message: 'Todo was not updated due to error: ' + err.message
+          message: 'Task was not updated due to error: ' + err.message
         })
       })
   }
@@ -72,7 +72,7 @@ class TodoUpdate extends Component {
 
     let todoJsx
     if (!todo) {
-      todoJsx = 'Loading...in update'
+      todoJsx = <img className="loading" src="https://media.giphy.com/media/YMM6g7x45coCKdrDoj/giphy.gif" alt="loading"/>
     } else if (updated) {
       todoJsx = <Redirect to={'/todos'}/>
     } else {
