@@ -78,12 +78,15 @@ class TodoIndex extends Component {
     })
   }
   // delete that specific row
-  deleteRow = (i) => {
-    const rows = [...this.state.todos]
-    rows.splice(i, 1)
-    this.setState({
-      todos: rows
-    })
+  deleteRow = (i, user) => {
+    // checks if user is the owner of the task
+    if (user._id === this.state.todos[i].owner) {
+      const rows = [...this.state.todos]
+      rows.splice(i, 1)
+      this.setState({
+        todos: rows
+      })
+    }
   }
   render () {
     const { todos } = this.state
