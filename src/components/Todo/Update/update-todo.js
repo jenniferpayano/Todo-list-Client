@@ -72,7 +72,7 @@ class TodoUpdate extends Component {
 
     let todoJsx
     if (!todo) {
-      todoJsx = 'Loading...in update'
+      todoJsx = <img className="loading" src="https://media.giphy.com/media/YMM6g7x45coCKdrDoj/giphy.gif" alt="loading"/>
     } else if (updated) {
       todoJsx = <Redirect to={'/todos'}/>
     } else {
