@@ -46,6 +46,7 @@ const TodoForm = ({ todo, handleSubmit, handleChange }) => (
         />
       </div>
       <div className="form-group">
+        <label>Priority: </label>
         <div className="form-check form-check-inline">
           <input
             className="form-check-input"
