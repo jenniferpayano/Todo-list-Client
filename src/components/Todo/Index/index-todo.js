@@ -36,8 +36,10 @@ class TodoIndex extends Component {
       })
   }
   todoList () {
+    const { user } = this.props
     return this.state.todos.map((currentTodo, i) => {
-      return <Todo todo={currentTodo} key= {i} onDelete={this.onClickDelete} id={i}/>
+      console.log(currentTodo)
+      return <Todo todo={currentTodo} user= {user} key= {i} onDelete={this.onClickDelete} id={i}/>
     })
   }
   handleDelete = (id, row) => {
@@ -136,13 +138,17 @@ const Todo = props => (
     <td className= {props.todo.completed ? 'completed' : '' }> {props.todo.duedate} </td>
     <td className= {props.todo.completed ? 'completed' : '' }> {props.todo.completed.toString()}</td>
     <td>
-      <Link to={`/todos/${props.todo._id}`} key={props.todo._id}>
-        <FaPencilAlt/>
-      </Link>
-      &emsp;&ensp;
-      <Button onClick={() => props.onDelete(props.todo._id, props.id)} id={props.id}>
-        <FaTrash/>
-      </Button>
+      { (props.todo.owner === props.user._id)
+        ? <div> <Link to={`/todos/${props.todo._id}`} key={props.todo._id}>
+          <FaPencilAlt/>
+        </Link>
+        &emsp;&ensp;
+        <Button className="btn-primary-table" onClick={() => props.onDelete(props.todo._id, props.id)} id={props.id}>
+          <FaTrash/>
+        </Button>
+        </div>
+        : <h6>  </h6>
+      }
     </td>
   </tr>
 )
