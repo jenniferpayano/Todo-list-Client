@@ -38,7 +38,6 @@ class TodoIndex extends Component {
   todoList () {
     const { user } = this.props
     return this.state.todos.map((currentTodo, i) => {
-      console.log(currentTodo)
       return <Todo todo={currentTodo} user= {user} key= {i} onDelete={this.onClickDelete} id={i}/>
     })
   }
