@@ -46,7 +46,7 @@ class App extends Component {
             message={msgAlert.message}
           />
         ))}
-        <main className="">
+        <main className="container">
           <Route exact path='/' component={Home} user={user} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
