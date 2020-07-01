@@ -77,15 +77,14 @@ class TodoUpdate extends Component {
       todoJsx = <Redirect to={'/todos'}/>
     } else {
       todoJsx = (
-        <div className="loading">
-          <div> <br/>
-            <h3>Update Task</h3>
-            <TodoForm
-              todo={todo}
-              handleChange={this.handleChange}
-              handleSubmit={this.handleSubmit}
-            />
-          </div>
+        <div>
+          <br/>
+          <h3>Update Task</h3>
+          <TodoForm
+            todo={todo}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
         </div>
       )
     }

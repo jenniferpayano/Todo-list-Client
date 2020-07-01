@@ -2,7 +2,6 @@ import React from 'react'
 const TodoForm = ({ todo, handleSubmit, handleChange }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
-      <h3>Create Task</h3> <br/>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Project: </label>

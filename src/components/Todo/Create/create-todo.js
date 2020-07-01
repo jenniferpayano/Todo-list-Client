@@ -68,7 +68,8 @@ class TodoCreate extends Component {
       todoJsx = <Redirect to={'/todos'}/>
     } else {
       todoJsx = (
-        <div>
+        <div> <br/>
+          <h3>Create Task</h3>
           <TodoForm
             todo={todo}
             handleSubmit={this.onSubmit}
