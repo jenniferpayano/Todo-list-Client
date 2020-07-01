@@ -77,9 +77,9 @@ class TodoUpdate extends Component {
       todoJsx = <Redirect to={'/todos'}/>
     } else {
       todoJsx = (
-        <div>
-          <br/>
+        <div className="form-group">
           <h3>Update Task</h3>
+          <br/>
           <TodoForm
             todo={todo}
             handleChange={this.handleChange}
